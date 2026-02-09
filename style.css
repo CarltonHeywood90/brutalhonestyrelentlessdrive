@@ -308,3 +308,27 @@ footer {
   text-decoration: none;
   border-radius: 6px;
 }
+
+.download-btn {
+  display: inline-block;
+  background-color: #ff5500; /* bright color to match SoundCloud theme */
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.download-btn:hover {
+  background-color: #e64e00; /* slightly darker on hover */
+  transform: translateY(-2px);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
