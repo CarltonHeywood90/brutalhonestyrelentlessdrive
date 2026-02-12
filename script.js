@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Object.assign(topBtn.style, {
     position: 'fixed',
     bottom: '20px',
-    right: '20px',
+    left: '20px',
     display: 'none',
     padding: '0.5rem 1rem',
     background: '#4169E1',
