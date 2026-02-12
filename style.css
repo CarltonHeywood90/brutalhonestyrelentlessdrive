@@ -203,7 +203,7 @@ a.service-link:hover {
 #scrollTopBtn {
   position: fixed;
   bottom: 20px;
-  right: 2px;
+  left: 20px;
   display: none;
   padding: 0.5rem 1rem;
   background: #4169E1;
