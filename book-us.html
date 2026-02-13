@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Modular nav -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      });
+  </script>
+
+  <div class="banner">
+    <img src="C:\Users\cjwoo\brutalhonestyrelentlessdrive\banner.jpg" alt="BHRD Banner" />
+  </div>
+
+  <div class="container">
+    <h1 class="page-title">Book Us</h1>
+
+    <section class="intro">
+      <p class="centered">
+        Thanks for your interest in connecting! BHRD a band passionate about original guitar-driven, and intricate drum music and creative collaborations.
+      </p>
+
+      <p class="centered">
+        We're called Brutal Honesty, Relentless Drive (BHRD). We're actively looking for opportunities to open for bands, play open mic nights, and collaborate with fellow musicians and creators.
+      </p>
+
+      <p class="centered">
+        Fill out the form below to reach us for bookings, collaborations, or any creative projects. We'll get back to you as soon as possible!
+      </p>
+    </section>
+
+    <!-- Contact / Booking Form -->
+    <form action="https://formspree.io/f/xeorezpv" method="POST" class="contact-form">
+      
+      <label for="name">Name*</label>
+      <input type="text" id="name" name="name" required placeholder="Your full name">
+
+      <label for="email">Email*</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+      <label for="inquiry">Type of Inquiry*</label>
+      <select id="inquiry" name="inquiry" required>
+        <option value="">Select</option>
+        <option value="general">General Question</option>
+        <option value="booking">Booking</option>
+        <option value="collaboration">Collaboration</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="date">Preferred Date & Time</label>
+      <input type="datetime-local" id="date" name="date">
+
+      <label for="message">Message*</label>
+      <textarea id="message" name="message" required placeholder="Your message here"></textarea>
+
+      <label class="checkbox">
+        <input type="checkbox" name="consent" required>
+        I agree to be contacted
+      </label>
+
+      <button type="submit">Send</button>
+      <p class="form-response">Thanks! Your message has been sent.</p>
+    </form>
+
+  </div>
+
+  <div>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="brutalhoner" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Left" data-x_margin="18" data-y_margin="18"></script>
+  </div>
+
+<!-- in each page where you want the footer -->
+<div id="footer-placeholder"></div>
+
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading footer:', error));
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
