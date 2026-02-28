@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="canonical" href="https://brutalhonestyrelentlessdrive.com" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BHRD | Musicians, Producers, Band</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Modular nav -->
+    <div id="nav-placeholder"></div>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('nav-placeholder').innerHTML = data;
+        });
+    </script>
+  
+    <div class="banner">
+      <img src="banner.jpg" alt="Carlton Heywood Banner" />
+    </div>
+  
+    <div class="container">
+      <h1 class="page-title">Carlton Heywood & Max Dail</h1>
+      <p class="center-text large-text">Musicians • Producers</p>
+  
+      <p class="center-text large-text">
+        Welcome to the Bandcamp section of the <strong>BHRD</strong> — website. Here you’ll find BHRD's music available for purchase.
+      </p>
+  
+      <div class="centered">
+        <h2><span class="dollar-sign">$</span> Buy Our Music</h2>
+
+        <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=2252179012/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://brutalhonestyrelentlessdrive.bandcamp.com/album/leap-of-insanity">Leap of Insanity by Brutal Honesty Relentless Drive</a></iframe>
+      </div>
+    </div>
+
+    <div>
+        <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="brutalhoner" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Left" data-x_margin="2" data-y_margin="2"></script>
+      </div>
+    
+    <!-- in each page where you want the footer -->
+    <div id="footer-placeholder"></div>
+    
+    <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+    </script>
+    
+    
+      <script src="script.js"></script>
+    
+    </body>
+</html>
