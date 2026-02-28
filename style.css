@@ -157,7 +157,7 @@ a.service-link:hover {
    Embeds
 ========================= */
 .centered iframe {
-  max-width: 500%;
+  max-width: 50%;
   width: 100%;
   border: none;
 }
