@@ -4,49 +4,49 @@
   <link rel="canonical" href="https://brutalhonestyrelentlessdrive.com" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BHRD | Musicians, Producers, Band</title>
+  <title>BHRD | Music Theory Oxygen</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- Modular nav -->
   <div id="nav-placeholder"></div>
-  <script>
-    fetch('nav.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('nav-placeholder').innerHTML = data;
-      });
-  </script>
 
   <div class="banner">
     <img src="banner.jpg" alt="Carlton Heywood Banner" />
   </div>
 
-  <div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden;">
-  <iframe 
-    src="https://theorygamewebapp-7jkcusfqvzdmidexek5aa6.streamlit.app/"
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-    allowfullscreen>
-  </iframe>
-</div>
+  <div style="position: relative; width: 100%; max-width: 900px; margin: 20px auto; height: 800px; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <iframe 
+      src="https://theorygamewebapp-7jkcusfqvzdmidexek5aa6.streamlit.app/?embed=true"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-<!-- in each page where you want the footer -->
-<div id="footer-placeholder"></div>
+  <div id="footer-placeholder"></div>
 
-<script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
-  })
-  .catch(error => console.error('Error loading footer:', error));
-</script>
+  <script>
+    // Function to load modular HTML and dispatch an event when done
+    async function loadComponent(id, url, eventName) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Failed to load ${url}`);
+        const data = await response.text();
+        document.getElementById(id).innerHTML = data;
+        // This tells script.js that the element now exists!
+        document.dispatchEvent(new Event(eventName));
+      } catch (err) {
+        console.error(err);
+      }
+    }
 
+    // Load both and then script.js will pick them up
+    loadComponent('nav-placeholder', 'nav.html', 'navLoaded');
+    loadComponent('footer-placeholder', 'footer.html', 'footerLoaded');
+  </script>
 
   <script src="script.js"></script>
 
 </body>
 </html>
-

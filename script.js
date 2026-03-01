@@ -122,10 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Book Me form AJAX submission
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.querySelector(".contact-form");
+  
+  // 🛡️ GUARD: If there is no form on this page, stop here!
+  if (!form) return; 
+
   const responseMsg = form.querySelector(".form-response");
 
   form.addEventListener("submit", function(e) {
-    e.preventDefault(); // prevent default form submission
+    e.preventDefault(); 
 
     const formData = new FormData(form);
 
@@ -138,18 +142,21 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(response => {
       if (response.ok) {
-        responseMsg.style.display = "block";
+        if (responseMsg) {
+          responseMsg.style.display = "block";
+          responseMsg.textContent = "Success! I'll get back to you soon.";
+        }
         form.reset();
       } else {
+        throw new Error();
+      }
+    })
+    .catch(() => {
+      if (responseMsg) {
         responseMsg.style.display = "block";
         responseMsg.style.color = "#FF6347";
         responseMsg.textContent = "Oops! There was a problem submitting your form.";
       }
-    })
-    .catch(() => {
-      responseMsg.style.display = "block";
-      responseMsg.style.color = "#FF6347";
-      responseMsg.textContent = "Oops! There was a problem submitting your form.";
     });
   });
 });
